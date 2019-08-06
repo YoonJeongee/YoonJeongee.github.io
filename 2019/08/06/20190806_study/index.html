@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>데이터 모델링 · Yoon Jeong&#39;s Blog</title>
+    <title>SQLD - 데이터 모델링 · Yoon Jeong&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Yoon Jeong&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">데이터 모델링</a>
+                <a href="#" class="post-name">SQLD - 데이터 모델링</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            데이터 모델링
+            SQLD - 데이터 모델링
             <!-- 404 -->
             
         </h1>
@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>글자수: <span class="post-count word-count">17</span>읽는 시간: <span class="post-count reading-time">1 min</span></span>
+                        <span>글자수: <span class="post-count word-count">186</span>읽는 시간: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -395,7 +395,66 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="데이터-모델링"><a href="#데이터-모델링" class="headerlink" title="데이터 모델링"></a>데이터 모델링</h2><p>데이터 모델링은 고객의 비즈니스 프로세스를 이해하고 비즈니스 프로세스의 규칙을 정의한다. 정의된 비즈니스 규칙을 데이터 모델로 표현한다.</p>
+        <p> sqld 학습에 있어서 ‘데이터 모델링의 이해’는 Part1에서 큰 비중을 차지하고 있으므로 확실하게 숙지한다!<br>‘데이터 모델링’ section은 데이터 모델링의 기본적인 용어에 대한 구분이 필요하다. Entity, Attribute, Relationship의 의미를 분명히 식별해야 한다. 자세한 내용은 아래에서 다루도록 한다.</p>
+<br>
+
+<br>
+
+<hr>
+<br>
+
+<h2 id="데이터-모델링이란"><a href="#데이터-모델링이란" class="headerlink" title="데이터 모델링이란?"></a>데이터 모델링이란?</h2><ul>
+<li><p>현실 세계의 정보들을 컴퓨터에 표현하기 위해서 <strong>단순화, 추상화</strong>하여 체계적으로 표현한 <strong>개념적 모형</strong></p>
+</li>
+<li><p>데이터, 데이터의 관계, 데이터의 의미 및 일관성, 제약조건 등을 기술하기 위한 <strong>개념적 도구들의 모임</strong></p>
+</li>
+<li><p>데이터베이스 설계 과정에서 데이터의 구조를 논리적으로 표현하기 위해 사용되는 도구</p>
+</li>
+<li><p><strong>데이터의 구조(Schema)를 논리적으로 묘사</strong>하기 위해 사용되는 지능적 도구</p>
+</li>
+</ul>
+<br>
+
+<hr>
+<br>
+
+<h2 id="데이터-모델링의-특징"><a href="#데이터-모델링의-특징" class="headerlink" title="데이터 모델링의 특징"></a>데이터 모델링의 특징</h2><blockquote>
+<p><strong>추상화(Abstraction)</strong> : 공통적인 특징을 찾아 간략하게 표현 </p>
+</blockquote>
+<blockquote>
+<p><strong>단순화(Simple)</strong> : 누구나 쉽게 이해할 수 있도록 표현</p>
+</blockquote>
+<blockquote>
+<p><strong>명확성(Clarity</strong>) : 명확하게 의미가 해석되어야 하고, 한 가지 의미를 가져야 함</p>
+</blockquote>
+<br>
+
+<hr>
+<br>
+
+<h2 id="데이터-모델링-단계"><a href="#데이터-모델링-단계" class="headerlink" title="데이터 모델링 단계"></a>데이터 모델링 단계</h2><blockquote>
+<p><strong>1. 개념적 모델링(Conceptual Data Modeling)</strong> </p>
+<ul>
+<li><strong>전사적 관점</strong>에서 데이터를 모델링 함</li>
+<li><strong>추상화 수준</strong>이 <strong>가장 높음</strong></li>
+<li>기술적 용어는 가급적 사용하지 않음</li>
+<li><strong>*Entity</strong>와 <strong>Attribute</strong>를 도출하고 <strong>개념적 ERD를 작성*</strong></li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>2. 논리적 모델링(Logical Data Modeling)</strong></p>
+<ul>
+<li><strong>정규화</strong>를 통해서 <strong>독립성 확보</strong>, <strong>재사용성을 높임</strong></li>
+<li><strong>식별자 정의</strong> 및 필요한 모든 <strong>릴레이션을 정의</strong></li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>3. 물리적 모델링(Physical Modeling)</strong></p>
+<ul>
+<li><strong>테이블, 인덱스, 함수 등을 생성</strong>하는 단계 </li>
+<li>성능, 보안 가용성 등을 고려하여 <strong>데이터베이스를 실제 구축</strong></li>
+</ul>
+</blockquote>
 
     </article>
     <!-- license  -->
@@ -408,8 +467,8 @@ height:50vh;
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/08/04/hello-world/" title= "Hello World">
-                    <div class="prevTitle">Hello World</div>
+                <a href= "/2019/08/04/Markdown/" title= "Markdown 작성법">
+                    <div class="prevTitle">Markdown 작성법</div>
                 </a>
             
         </li>
@@ -521,7 +580,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#데이터-모델링"><span class="toc-number">1.</span> <span class="toc-text">데이터 모델링</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#데이터-모델링이란"><span class="toc-number">1.</span> <span class="toc-text">데이터 모델링이란?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#데이터-모델링의-특징"><span class="toc-number">2.</span> <span class="toc-text">데이터 모델링의 특징</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#데이터-모델링-단계"><span class="toc-number">3.</span> <span class="toc-text">데이터 모델링 단계</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -570,7 +629,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/06</span><a class="archive-post-title" href= "/2019/08/06/20190806_study/" >데이터 모델링</a>
+            <span class="archive-post-date">08/06</span><a class="archive-post-title" href= "/2019/08/06/20190806_study/" >SQLD - 데이터 모델링</a>
         </li>
     
     
@@ -584,7 +643,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/08/04/hello-world/" >Hello World</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2019/08/04/Markdown/" >Markdown 작성법</a>
         </li>
     
     </div>
