@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Yoon Jeong&#39;s Blog</title>
+    <title>SQLD - 데이터 모델링(2) · Yoon Jeong&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Yoon Jeong&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">SQLD - 데이터 모델링(2)</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Yoon Jeong's Studio.</a>
 </header>
@@ -227,17 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Yoon Jeong's Studio.
-            <!-- 文章页  -->
+            SQLD - 데이터 모델링(2)
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,43 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                it's better to burn out than to fade away
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>글자수: <span class="post-count word-count">358</span>읽는 시간: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/08/08</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,177 +393,91 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/08/08/20190808_study/" >
-            
-                <span>SQLD - 데이터 모델링(2)</span>
-        </a>
-        <div class="abstract-content">
-            지난 포스트에서는 데이터 모델링의 정의 및 특징, 그리고 데이터 모델링의 단계에 대해 학습했다. 지난 학습에 이어 이번에는 데이터 모델링의 관점, Entity, ERD(Entity Relationship Diagram) 등에 대한 용어를 숙지하기 위한 내용을 다뤄보고자 한다. 자세한 내용은 아래에서 다루도록 하자!
-  
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>지난 포스트에서는 데이터 모델링의 정의 및 특징, 그리고 데이터 모델링의 단계에 대해 학습했다. 지난 학습에 이어 이번에는 데이터 모델링의 관점, Entity, ERD(Entity Relationship Diagram) 등에 대한 용어를 숙지하기 위한 내용을 다뤄보고자 한다. 자세한 내용은 아래에서 다루도록 하자!</p>
+<br>  
 
+<hr>
+<h2 id="데이터-모델링-관점"><a href="#데이터-모델링-관점" class="headerlink" title="데이터 모델링 관점"></a>데이터 모델링 관점</h2><ul>
+<li><p><strong>데이터</strong> : business process에서 <em>사용되는 데이터</em></p>
+</li>
+<li><p><strong>프로세스</strong> : business process에서 <em>수행하는 작업</em></p>
+</li>
+<li><p><strong>데이터와 프로세스</strong> : <em>데이터와 프로세스 간의 관계</em></p>
+</li>
+</ul>
+<hr>
+<h2 id="데이터-모델링-고려사항"><a href="#데이터-모델링-고려사항" class="headerlink" title="데이터 모델링 고려사항"></a>데이터 모델링 고려사항</h2><ul>
+<li><p><strong>데이터 모델의 독립성</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;: 독립성이 확보된 모델은 업무 변화에 능동적으로 대응 가능하므로 <strong>정규화를 통해 독립성을 확보</strong>.</p>
+</li>
+<li><p><strong>요구 사항을 간결하고 명확하게 표현</strong></p>
+</li>
+<li><p><strong>데이터 품질 확보</strong></p>
+</li>
+</ul>
+<hr>
+<h2 id="ERD-Entity-Relationship-Diagram"><a href="#ERD-Entity-Relationship-Diagram" class="headerlink" title="ERD(Entity Relationship Diagram)"></a>ERD(Entity Relationship Diagram)</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;: <strong>Entity와 Entity 간의 관계를 정의하는 모델링 방법</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;1976년 피터첸(Peter Chen)이 ERD표기법을 만들었으며 <strong>데이터 모델링의 표준</strong>으로 사용되고 있음.</p>
+<hr>
+<h2 id="ERD-작성절차"><a href="#ERD-작성절차" class="headerlink" title="ERD 작성절차"></a>ERD 작성절차</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>① Entity 도출 및 그리기</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 업무에서 관리해야 하는 집합 도출</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>② Entity 배치</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 도출된 Entity를 배치, <strong>중요한 Entity를 ‘왼쪽 상단’ 에 배치</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>③ Entity 간의 관계 설정</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>④ 관계명 서술</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <strong>Entity 간에 어떤 행위가 존재가 있는지 표현</strong> </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>⑤ 관계 참여도 표현</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <strong>관계 참여도</strong>란 한 개의 Entity와 다른 Entity 간의 참여하는 <strong>관계 수</strong>를 의미 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>⑥ 관계의 필수 여부 표현</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <strong>필수</strong>는 반드시 존재하는 것</p>
+<p><em>*   *ERD 작성 시 이해가 쉬워야하며 너무 복잡하지 않도록!</em></p>
+<hr>
+<h2 id="Entity-특징"><a href="#Entity-특징" class="headerlink" title="Entity 특징"></a>Entity 특징</h2><blockquote>
+<p><strong>식별자</strong> : 유일한 식별자 有 -&gt; <strong>(ex)</strong> 회원ID, 계좌번호</p>
+</blockquote>
+<blockquote>
+<p><strong>인스턴스 집합</strong> : 2개 이상의 인스턴스 -&gt; <strong>(ex)</strong> 고객정보는 2명 이상 있어야 함.</p>
+</blockquote>
+<blockquote>
+<p><strong>속성(Attribute)</strong> : Entity는 반드시 속성을 가짐 -&gt; <strong>(ex)</strong> 고객 Entity에 회원ID, PW, 주소 </p>
+</blockquote>
+<blockquote>
+<p><strong>관계(Relationship)</strong> : Entity는 다른 Entity와 최소 한 개 이상 관계 有 -&gt; <strong>(ex)</strong> 고객은 계좌를 개설함</p>
+</blockquote>
+<blockquote>
+<p><strong>업무</strong> : Entity는 업무에서 관리되어야 하는 집합 -&gt; <strong>(ex)</strong> 고객, 계좌</p>
+</blockquote>
+<hr>
+<p>Entity의 종류 및 Attribute, Relation에 관한 내용은 다음 포스트에서 자세하게 다루도록 하자!</p>
 
-데이터 모델링 관점
-데이터 : business process에서 사용되는 데이터
-
-프로세스 : business process에서 수행하는 작업
-
-데이터와 프로세스 : 데이터와 프로세스 간의 관계
-
-
-
-데이터...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/08</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/08/06/20190806_study/" >
-            
-                <span>SQLD - 데이터 모델링(1)</span>
-        </a>
-        <div class="abstract-content">
-             sqld 학습에 있어서 ‘데이터 모델링의 이해’는 Part1에서 큰 비중을 차지하고 있으므로 확실하게 숙지한다!‘데이터 모델링’ section은 데이터 모델링의 기본적인 용어에 대한 구분이 필요하다. Entity, Attribute, Relationship의 의미를 분명히 식별해야 한다. 자세한 내용은 아래에서 다루도록 한다.
-
-
-
-
-
-
-
-데이터 모델링이란?
-현실 세계의 정보들을 컴퓨터에 표현하기 위해서 단순화, 추상화하여 체계적으로 표현한 개념적 모형
-
-데이터, 데이터의 관계, 데이터의 의미 및 일관성, 제약조건 등을 기술...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/06</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/08/04/Markdown/" >
-            
-                <span>Markdown 작성법</span>
-        </a>
-        <div class="abstract-content">
-            블로그를 작성하는데 사용되는 Markdown 작성법에 대해 참고하자!
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/04</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/profile.jpg >
-    <div class="profile-name">홍윤정</div>
-    
-    <div class="profile-signature">
-        witness me
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+        </li>
+        <li class="previous">
             
-                <a href="mailto:hongyj6650@gmail.com" class="iconfont-archer email" title=email ></a>
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/08/06/20190806_study/" title= "SQLD - 데이터 모델링(1)">
+                    <div class="prevTitle">SQLD - 데이터 모델링(1)</div>
+                </a>
             
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <a href="//github.com/YoonJeongee" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -597,6 +553,24 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#데이터-모델링-관점"><span class="toc-number">1.</span> <span class="toc-text">데이터 모델링 관점</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#데이터-모델링-고려사항"><span class="toc-number">2.</span> <span class="toc-text">데이터 모델링 고려사항</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERD-Entity-Relationship-Diagram"><span class="toc-number">3.</span> <span class="toc-text">ERD(Entity Relationship Diagram)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERD-작성절차"><span class="toc-number">4.</span> <span class="toc-text">ERD 작성절차</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Entity-특징"><span class="toc-number">5.</span> <span class="toc-text">Entity 특징</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -752,6 +726,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
