@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>글자수: <span class="post-count word-count">367</span>읽는 시간: <span class="post-count reading-time">2 min</span></span>
+                        <span>글자수: <span class="post-count word-count">455</span>읽는 시간: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -399,14 +399,16 @@ height:50vh;
 <br>  
 
 <hr>
-<h2 id="데이터-모델링-관점"><a href="#데이터-모델링-관점" class="headerlink" title="데이터 모델링 관점"></a>데이터 모델링 관점</h2><ul>
-<li><p><strong>데이터</strong> : business process에서 <em>사용되는 데이터</em></p>
-</li>
-<li><p><strong>프로세스</strong> : business process에서 <em>수행하는 작업</em></p>
-</li>
-<li><p><strong>데이터와 프로세스</strong> : <em>데이터와 프로세스 간의 관계</em></p>
-</li>
-</ul>
+<h2 id="데이터-모델링-관점"><a href="#데이터-모델링-관점" class="headerlink" title="데이터 모델링 관점"></a>데이터 모델링 관점</h2><p>- 데이터 모델링의 관점을 무엇으로 두느냐에 따라 <strong>모델링의 방향 및 분석의 목적</strong>도 달라지게 된다.<br>&nbsp;&nbsp;&nbsp;&nbsp;데이터 모델링의 관점은 <strong>크게 3가지</strong>로 나뉘며 아래와 같다.</p>
+<blockquote>
+<p><strong>[ 데이터 ]</strong> : business process에서 사용되는 <strong>“데이터”</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;- 구조 분석, <strong>정적 분석</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>[ 프로세스 ]</strong> : business process에서 수행하는 <strong>“작업”</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;- 시나리오 분석, 도메인 분석, <strong>동적 분석</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>[ 데이터와 프로세스 ]</strong> : 데이터와 프로세스 간의 <strong>“관계”</strong></p>
+</blockquote>
 <hr>
 <h2 id="데이터-모델링-고려사항"><a href="#데이터-모델링-고려사항" class="headerlink" title="데이터 모델링 고려사항"></a>데이터 모델링 고려사항</h2><ul>
 <li><p><strong>데이터 모델의 독립성</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;: 독립성이 확보된 모델은 업무 변화에 능동적으로 대응 가능하므로 <strong>정규화를 통해 독립성을 확보</strong>.</p>
@@ -425,23 +427,23 @@ height:50vh;
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>④ 관계명 서술</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <strong>Entity 간에 어떤 행위가 존재가 있는지 표현</strong> </p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>⑤ 관계 참여도 표현</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <strong>관계 참여도</strong>란 한 개의 Entity와 다른 Entity 간의 참여하는 <strong>관계 수</strong>를 의미 </p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>⑥ 관계의 필수 여부 표현</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <strong>필수</strong>는 반드시 존재하는 것</p>
-<p><em>*   *ERD 작성 시 이해가 쉬워야하며 너무 복잡하지 않도록!</em></p>
+<p>*   <em>ERD 작성 시 이해가 쉬워야하며 너무 복잡하지 않도록!</em></p>
 <hr>
 <h2 id="Entity"><a href="#Entity" class="headerlink" title="Entity"></a>Entity</h2><p>: Entity는 업무에서 관리해야 하는 데이터 집합을 의미함</p>
 <h2 id="Entity-특징"><a href="#Entity-특징" class="headerlink" title="[ Entity 특징 ]"></a>[ Entity 특징 ]</h2><blockquote>
-<p><strong>식별자</strong> : 유일한 식별자 有 -&gt; <strong>(ex)</strong> 회원ID, 계좌번호</p>
+<p><strong>식별자</strong> : <strong>유일한 식별자</strong>가 있어야 함<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; <strong>(ex)</strong> 회원ID, 계좌번호</p>
 </blockquote>
 <blockquote>
-<p><strong>인스턴스 집합</strong> : 2개 이상의 인스턴스 -&gt; <strong>(ex)</strong> 고객정보는 2명 이상 있어야 함.</p>
+<p><strong>인스턴스 집합</strong> : <strong>2개 이상의 인스턴스</strong>가 있어야 함<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; <strong>(ex)</strong> 고객정보는 2명 이상 있어야 함.</p>
 </blockquote>
 <blockquote>
-<p><strong>속성(Attribute)</strong> : Entity는 반드시 속성을 가짐 -&gt; <strong>(ex)</strong> 고객 Entity에 회원ID, PW, 주소 </p>
+<p><strong>속성(Attribute)</strong> : Entity는 <strong>반드시 속성을 가짐</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; <strong>(ex)</strong> 고객 Entity의 회원ID, PW, 주소</p>
 </blockquote>
 <blockquote>
-<p><strong>관계(Relationship)</strong> : Entity는 다른 Entity와 최소 한 개 이상 관계 有 -&gt; <strong>(ex)</strong> 고객은 계좌를 개설함</p>
+<p><strong>관계(Relationship)</strong> : Entity는 다른 Entity와 <strong>최소 한 개 이상 관계</strong>가 있어야 함<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; <strong>(ex)</strong> 고객은 계좌를 개설함</p>
 </blockquote>
 <blockquote>
-<p><strong>업무</strong> : Entity는 업무에서 관리되어야 하는 집합 -&gt; <strong>(ex)</strong> 고객, 계좌</p>
+<p><strong>업무</strong> : Entity는 업무에서 <strong>관리되어야 하는 집합</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; <strong>(ex)</strong> 고객, 계좌</p>
 </blockquote>
 <hr>
 <p>Entity의 종류 및 Attribute, Relation에 관한 내용은 다음 포스트에서 자세하게 다루도록 하자!</p>
